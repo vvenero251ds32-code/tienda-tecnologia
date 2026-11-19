@@ -2,16 +2,26 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Marca;
 use Illuminate\Database\Seeder;
 
 class MarcaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $marcas = [
+            'Logitech',
+            'Sony',
+            'Kingston',
+            'ASUS',
+            'TP-Link',
+            'Corsair',
+            'Samsung',
+            'HyperX',
+        ];
+
+        foreach ($marcas as $nombre) {
+            Marca::firstOrCreate(['nombre' => $nombre], ['activo' => true]);
+        }
     }
 }
