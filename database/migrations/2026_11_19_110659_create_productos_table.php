@@ -15,6 +15,7 @@ return new class extends Migration
             $table->foreignId('marca_id')->constrained('marcas')->restrictOnDelete();
             $table->string('sku', 50)->unique();
             $table->string('nombre', 200);
+            $table->string('modelo', 100)->nullable();
             $table->text('descripcion')->nullable();
             $table->jsonb('especificaciones')->nullable();
             $table->decimal('precio_regular', 10, 2);
