@@ -18,7 +18,12 @@ class CategoriaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => fake()->unique()->randomElement([
+                'Periféricos', 'Audio y Sonido', 'Almacenamiento',
+                'Monitores', 'Redes y Conectividad', 'Componentes PC',
+                'Accesorios Laptop', 'Cables y Adaptadores',
+            ]),
+            'activo' => true,
         ];
     }
 }

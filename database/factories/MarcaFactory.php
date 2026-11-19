@@ -18,7 +18,11 @@ class MarcaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => fake()->unique()->randomElement([
+                'Logitech', 'Sony', 'Kingston', 'ASUS',
+                'TP-Link', 'Corsair', 'Samsung', 'HyperX',
+            ]),
+            'activo' => true,
         ];
     }
 }
